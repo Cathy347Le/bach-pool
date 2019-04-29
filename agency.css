@@ -34,6 +34,7 @@ a:hover {
   color: #fec503;
 }
 
+
 .text-primary {
   color: #fed136 !important;
 }
@@ -195,6 +196,10 @@ img::-moz-selection {
     font-size: 1.25em;
     padding: 12px 0;
   }
+}
+
+.navbar-brand img{
+  width: 200px;
 }
 
 /* html { 
