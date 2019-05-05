@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  height: 400px;
+  text-align: center;
+}
+
+.contact-intro {
+  width: 600px;
+  margin-right: 200px;
+}
+
+h6 {
+  margin-bottom: 50px;
+  font-weight: normal;
+  font-style: italic;
+  color: #696969;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+p {
+  color: #696969;
+  /* text-align: center; */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input,
+textarea {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.button {
+  color: white;
+  background-color: #ff0000;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 20px; */
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 150px;
+}
