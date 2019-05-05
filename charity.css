@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  margin-top: 50px;
+  text-align: center;
+  padding: 100px;
+}
+
 .charity-container {
   display: flex;
   justify-content: center;
@@ -13,14 +28,14 @@ section {
   border: 1px solid lightgray;
 }
 
-.charity-logo-container {
+.current-charity-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.charity-logo-container div {
-  margin: 40px;
+.current-charity-container div {
+  margin: 20px 40px;
   text-align: center;
 }
 
@@ -32,7 +47,7 @@ section {
 }
 
 .past-charity-container div {
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 .charity-card-2 img {
