@@ -23,7 +23,7 @@
 
   <body>
     <!-- Navigation -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="index.html"
           ><img src="homepage-icon.png" alt=""
@@ -60,12 +60,46 @@
           </ul>
         </div>
       </div>
-    </nav> -->
+    </nav>
     <main>
+      <h3>Got questions, comments, feedback, or suggestions?</h3>
+      <p>
+        Feel free to email us at thebachpool@gmail.com or fill out the form on
+        this page. We'd love to hear from you!
+      </p>
+      <form method="POST" action="">
+        <div>
+          <input
+            name="name"
+            type="text"
+            size="42"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div>
+          <input
+            name="email"
+            type="text"
+            size="42"
+            placeholder="E-mail"
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            name="message"
+            cols="40"
+            rows="7"
+            placeholder="Message"
+            required
+          ></textarea>
+        </div>
+        <input class="button" name="submit" type="submit" value="SEND" />
+      </form>
       <div class="contact-container">
         <div class="contact-intro">
           <h2>THE TEAM</h2>
-          <h6>Lorem ipsum dolor sit amet consectetur</h6>
           <div class="image-container">
             <div>
               <img class="profile-pic ben-pic" src="Ben_profile.png" />
@@ -84,36 +118,6 @@
             </div>
           </div>
         </div>
-        <form method="POST" action="">
-          <div>
-            <input
-              name="name"
-              type="text"
-              size="42"
-              placeholder="Name"
-              required
-            />
-          </div>
-          <div>
-            <input
-              name="email"
-              type="text"
-              size="42"
-              placeholder="E-mail"
-              required
-            />
-          </div>
-          <div>
-            <textarea
-              name="message"
-              cols="40"
-              rows="7"
-              placeholder="Questions, comments, and suggestions"
-              required
-            ></textarea>
-          </div>
-          <input class="button" name="submit" type="submit" value="SEND" />
-        </form>
       </div>
     </main>
 
