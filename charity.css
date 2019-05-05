@@ -8,7 +8,33 @@ section {
 }
 
 .card-img {
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   border: 1px solid lightgray;
+}
+
+.charity-logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.charity-logo-container div {
+  margin: 40px;
+  text-align: center;
+}
+
+.past-charity-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+}
+
+.past-charity-container div {
+  margin: 20px 0px;
+}
+
+.charity-card-2 img {
+  margin: 0px 40px;
 }
