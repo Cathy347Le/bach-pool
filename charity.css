@@ -1,0 +1,14 @@
+.charity-container {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  width: 600px;
+}
+
+.card-img {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid lightgray;
+}
