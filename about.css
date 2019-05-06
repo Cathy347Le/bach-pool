@@ -10,3 +10,34 @@ h2 {
   width: 240px;
   padding-top: 20px;
 }
+
+#simpsons-img {
+  width: 220px;
+}
+
+.border-line {
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.place-structure {
+  width: 90px;
+  height: 90px;
+  border: 3px solid black;
+}
+
+.flex-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.place-first-row {
+  margin-top: 50px;
+  padding: 0px 150px;
+}
+
+.place-second-row {
+  padding: 30px 400px;
+}
