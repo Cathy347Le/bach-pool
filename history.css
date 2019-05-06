@@ -4,31 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
 
-/* *,
-::after,
-::before {
-  box-sizing: border-box;
-} */
-/* 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-} */
-
-/* body {
-  overflow-x: hidden;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-} */
-
-/* nav,
-main {
-  display: block;
-} */
-
 p {
   line-height: 1.75;
 }
@@ -55,10 +30,6 @@ h6 {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-section {
-  padding: 100px 0;
 }
 
 section h2.section-heading {
