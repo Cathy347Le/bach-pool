@@ -421,3 +421,8 @@ header.masthead .intro-text .intro-heading {
   transform: rotate(90deg);
   background-color: #212529;
 }
+
+.btn-disable {
+  cursor: url("http://icons.iconarchive.com/icons/tatice/cristal-intense/24/Ad-Aware-icon.png"),
+    auto;
+}

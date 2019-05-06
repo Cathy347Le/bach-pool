@@ -84,3 +84,8 @@ textarea {
   border-radius: 50%;
   width: 125px;
 }
+
+.btn-disable {
+  cursor: url("http://icons.iconarchive.com/icons/tatice/cristal-intense/24/Ad-Aware-icon.png"),
+    auto;
+}
