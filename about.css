@@ -13,6 +13,7 @@ h2 {
 
 #simpsons-img {
   width: 220px;
+  height: 270px;
 }
 
 .border-line {
@@ -22,8 +23,8 @@ h2 {
 }
 
 .place-structure {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border: 3px solid black;
 }
 
@@ -48,4 +49,9 @@ h2 {
 
 #more-rules-div {
   font-style: italic;
+}
+
+.pool-steps {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
