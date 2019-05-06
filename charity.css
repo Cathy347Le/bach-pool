@@ -47,6 +47,18 @@ section {
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#vera-img {
+  padding: 2.2rem 0.5rem;
+}
+
+#equal-fed-img {
+  padding: 1.3rem 0rem;
+}
+
+.padding-to-logo {
+  padding: 0.5rem;
+}
+
 .charity-card-2 .card-img {
   margin-bottom: 15px;
 }
