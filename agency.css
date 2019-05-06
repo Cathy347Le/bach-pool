@@ -94,6 +94,7 @@ section h3.section-subheading {
 .btn-primary {
   background-color: #fed136;
   border-color: #fed136;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .btn-primary:active,
@@ -101,7 +102,8 @@ section h3.section-subheading {
 .btn-primary:hover {
   background-color: #fec810 !important;
   border-color: #fec810 !important;
-  color: white;
+  color: #0000EE;
+
 }
 
 .btn-primary:active,
