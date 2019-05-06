@@ -47,6 +47,10 @@ section {
   border: 1px solid lightgray;
 }
 
+.card-text {
+  line-height: 25px;
+}
+
 .current-charity-container {
   display: flex;
   flex-wrap: wrap;
@@ -66,7 +70,7 @@ section {
 }
 
 .past-charity-container div {
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 
 .charity-card-2 img {
