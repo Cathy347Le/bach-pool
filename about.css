@@ -41,3 +41,11 @@ h2 {
 .place-second-row {
   padding: 30px 400px;
 }
+
+#magnifying-glass-img {
+  width: 350px;
+}
+
+#more-rules-div {
+  font-style: italic;
+}

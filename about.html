@@ -161,11 +161,85 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col text-center">
+            <h2 class="section-heading text-uppercase">
+              Full Rules
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <img id="magnifying-glass-img" src="magnifying-glass.jpg" alt="" />
+            <a href="#more-rules-div" type="btn" class="btn btn-success" onclick="moreRules()">Read more</a>
+          </div>
+          <div class="col-8">
+            <p>
+              Entries will not be accepted if they (or the associated Venmo)
+              arrive after noon on the day of the season premiere.
+            </p>
+            <p>
+              The entry form asks participants to rank all the contestants on
+              the Bachelor/Bachelorette, from winner to first eliminated. Scores
+              are calculated by assessing the correlation between every entry’s
+              rankings and the actual order of finish. The closer the predicted
+              rank of each contestant to the actual order of finish, the better
+              one’s score.
+            </p>
+            <p>
+              Scores can range from -1.00 to +1.00; mathematically, +1.00 means
+              that the entry got the order completely right, while -1.00 means
+              that the entry got the order completely backwards (had the winner
+              ranked last). There is one adjustment to the scores: a bonus of
+              0.10 is added to each entry that correctly ranked the winning
+              contestant first. The highest possible score is +1.10.
+            </p>
+          </div>
+        </div>
+        <div class="row" id="more-rules-div" style="display: none;">
+          <div class="col mt-5">
+            <p>In actuality, the order of finish on the show is never smooth –
+              often, several contestants are eliminated at once. In such cases,
+              simultaneously-eliminated contestants are assigned the average
+              score for that group – for example, if two contestants are
+              eliminated together in 23rd and 24th, they are both assigned an
+              ‘actual’ rank of 23.5. Because of these simultaneous eliminations,
+              it is not possible to predict the rank order exactly correctly
+              (because your entry can’t account for these ties). </p>
+              <p>During the season, projected standings can be calculated each week using the
+              order of roses as a stand-in for rankings for those who haven’t
+              been eliminated (i.e. the contestant who receives the first rose
+              is ranked first). As the weeks progress, the standings crystallize
+              as more contestants are eliminated and locked into actual
+              rankings. The final standings are calculated and published
+              following the season’s finale. The individual(s) with the highest
+              scores – including the bonus – receive prizes. </p>
+              <p>Disclaimer: The Bachelor/ette likes to throw viewers for a loop from time to time
+              by deviating from the usual structure of the show. For example,
+              new contestants may appear midseason and cannot be accounted for
+              in the rankings. Other times, contestants will be eliminated, only
+              to return later. For the purposes of this competition, every
+              effort is made to adhere to the structured format, but the
+              Bachelor Pool team has the final say in determining the order of
+              elimination / rankings. No refunds, and decisions are final. </p>
+            </p>
+          </div>
+        </div>
       </div>
     </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function moreRules() {
+            var x = document.getElementById("more-rules-div");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
