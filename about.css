@@ -46,8 +46,8 @@ h2 {
   width: 350px;
 }
 
-#more-rules-div {
-  font-style: italic;
+.btn.btn-success {
+  margin-left: 300px;
 }
 
 .pool-steps {
