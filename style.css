@@ -1,13 +1,10 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   height: 100vh;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
+} */
 
 /* /* main { */
 /* display: inline-block; */
@@ -15,14 +12,14 @@ body {
   justify-content: center;
 } */
 
-main {
+/* main {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+} */
 
 /* .contact-container {
   display: flex;
@@ -47,12 +44,15 @@ h6 {
 }
 
 h2 {
-  margin: 60px 0px 20px 0px;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
 
-/* p {
-  color: #696969;
-} */
+h3 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
 
 form {
   display: flex;
@@ -87,4 +87,10 @@ textarea {
 .btn-disable {
   cursor: url("http://icons.iconarchive.com/icons/tatice/cristal-intense/24/Ad-Aware-icon.png"),
     auto;
+}
+
+.form-container,
+.image-container {
+  display: flex;
+  justify-content: center;
 }
