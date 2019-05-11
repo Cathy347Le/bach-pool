@@ -48,8 +48,17 @@ h2 {
   width: 350px;
 }
 
+.rules-content {
+  position: relative;
+  background: #f8f9fa;
+  z-index: 2;
+}
+
 .btn.btn-success {
-  margin-left: 300px;
+  position: sticky;
+  margin-top: 20px;
+  bottom: 10px;
+  z-index: 1;
 }
 
 .pool-steps {
