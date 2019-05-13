@@ -11,7 +11,72 @@
   border-right: 1px solid black;
 }
 
-.about-image {
+#rank-img {
+  width: 110px;
+  margin-left: 40px;
+}
+
+.triangle_right {
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-left: 25px solid #ffc107;
+  border-bottom: 13px solid transparent;
+}
+
+.rectangle {
+  background: #ffc107;
+}
+
+.arrow-1 .rectangle {
+  width: 70px;
+  height: 10px;
+}
+
+.arrow-2 .rectangle {
+  width: 70px;
+  height: 10px;
+}
+
+.arrow-3 .rectangle {
+  width: 50px;
+  height: 10px;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow-container > div {
+  margin-bottom: 10px;
+}
+
+.arrow-1 {
+  position: relative;
+  left: -25px;
+  transform: rotate(45deg);
+}
+
+.arrow-2 {
+  position: relative;
+  left: -25px;
+  bottom: 30px;
+  transform: rotate(-40deg);
+}
+
+.arrow-3 {
+  position: relative;
+  bottom: -30px;
+  left: -25px;
+}
+
+.rank-numbers {
+  position: relative;
+  right: 35px;
+}
+
+#standings-img {
   width: 200px;
 }
 
