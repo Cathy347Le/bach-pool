@@ -1,0 +1,58 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+/* body {
+  height: 100vh;
+} */
+
+h2 {
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.form-container,
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.image-container {
+  display: flex;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 125px;
+}
+
+.button {
+  color: white;
+  background-color: #ff0000;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  margin: 0 auto;
+}
+
+.image-container div {
+  margin: 0px 40px;
+}
