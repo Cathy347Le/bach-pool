@@ -1,7 +1,14 @@
-h2 {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
+/* Container tags */
+.flex-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* How to Play Section */
+.play-steps {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .about-image {
@@ -10,12 +17,6 @@ h2 {
 
 #cash-img {
   width: 180px;
-  /* padding-top: 20px; */
-}
-
-#simpsons-img {
-  width: 200px;
-  height: auto;
 }
 
 .border-line {
@@ -23,16 +24,16 @@ h2 {
   margin: 30px 0px;
 }
 
+/* Prize Section */
+#simpsons-img {
+  width: 200px;
+  height: auto;
+}
+
 .place-structure {
   width: 100px;
   height: 100px;
   border: 3px solid black;
-}
-
-.flex-middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .place-first-row {
@@ -44,6 +45,7 @@ h2 {
   padding: 30px 400px;
 }
 
+/* Rules section */
 #magnifying-glass-img {
   width: 350px;
 }
@@ -61,7 +63,9 @@ h2 {
   z-index: 1;
 }
 
-.pool-steps {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+/* Header tags */
+h2 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
