@@ -1,28 +1,19 @@
-/* * {
-  box-sizing: border-box;
-} */
-
-/* body {
-  height: 100vh;
-} */
-
-h2 {
-  font-size: 40px;
-  margin-top: 0px;
-  margin-bottom: 15px;
-}
-
-h3 {
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
-
+/* Container tags */
 .form-container,
 .image-container {
   display: flex;
   justify-content: center;
 }
 
+.image-container {
+  display: flex;
+}
+
+.image-container div {
+  margin: 0px 40px;
+}
+
+/* Contact form */
 form {
   display: flex;
   flex-direction: column;
@@ -35,15 +26,6 @@ textarea {
   font-size: 12px;
 }
 
-.image-container {
-  display: flex;
-}
-
-.profile-pic {
-  border-radius: 50%;
-  width: 125px;
-}
-
 .button {
   color: white;
   background-color: #ff0000;
@@ -53,6 +35,20 @@ textarea {
   margin: 0 auto;
 }
 
-.image-container div {
-  margin: 0px 40px;
+/* Team images */
+.profile-pic {
+  border-radius: 50%;
+  width: 125px;
+}
+
+/* Header tags */
+h2 {
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 50px;
+  margin-bottom: 15px;
 }
