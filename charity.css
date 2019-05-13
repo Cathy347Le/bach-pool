@@ -1,13 +1,73 @@
-* {
-  box-sizing: border-box;
+/* Container tags */
+.charity-container {
+  display: flex;
+  justify-content: center;
 }
 
-body {
-  height: 100vh;
+section {
+  width: 600px;
+  padding: 0px;
 }
 
+.card-img {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+}
+
+.padding-to-logo {
+  padding: 0.5rem;
+}
+
+.card-text {
+  line-height: 25px;
+}
+
+/* Left section, current season */
+#equal-fed-img {
+  padding: 1.3rem 0rem;
+}
+
+.current-charity-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.current-charity-container div {
+  margin: 20px 40px;
+  text-align: center;
+}
+
+/* Right section, past season */
+#vera-img {
+  padding: 2.2rem 0.5rem;
+}
+
+.past-charity-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  border-left: 2px solid silver;
+}
+
+.past-charity-container div {
+  margin: 20px 0px;
+}
+
+.charity-card-2 .card-img {
+  margin-bottom: 15px;
+}
+
+.charity-card-2 img {
+  margin: 0px 40px;
+}
+
+/* Header tags */
 main {
-  height: 100%;
   text-align: center;
 }
 
@@ -24,73 +84,4 @@ main h3.section-subheading {
   padding: 0px 130px;
   margin-bottom: 75px;
   text-transform: none;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.charity-container {
-  display: flex;
-  justify-content: center;
-}
-
-section {
-  width: 600px;
-  /* margin-top: 0; */
-  padding: 0px;
-}
-
-.card-img {
-  width: 8rem;
-  height: 8rem;
-  margin-bottom: 15px;
-  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
-}
-
-#vera-img {
-  padding: 2.2rem 0.5rem;
-}
-
-#equal-fed-img {
-  padding: 1.3rem 0rem;
-}
-
-.padding-to-logo {
-  padding: 0.5rem;
-}
-
-.charity-card-2 .card-img {
-  margin-bottom: 15px;
-}
-
-.card-text {
-  line-height: 25px;
-}
-
-.current-charity-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.current-charity-container div {
-  margin: 20px 40px;
-  text-align: center;
-}
-
-.past-charity-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 15px;
-  border-left: 2px solid silver;
-}
-
-.past-charity-container div {
-  margin: 20px 0px;
-}
-
-.charity-card-2 img {
-  margin: 0px 40px;
 }
