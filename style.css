@@ -111,12 +111,11 @@ header.masthead {
   text-align: center;
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://cdn1.thr.com/sites/default/files/2018/05/148894_0055_r1-h_2018.jpg");
+    url("https://www.tvinsider.com/wp-content/uploads/2019/05/151635_0048-1014x570.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  height: 100%;
 }
 
 header.masthead .intro-text {
