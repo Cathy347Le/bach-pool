@@ -1,66 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <style type="text/css">
-        body {
-            font-family: Franklin Gothic Book;
-            font-style: normal;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
-
-        th,
-        td {
-            padding: 8px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            font-weight: bold;
-        }
-
-        td {
-            overflow: hidden;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .column {
-            float: left;
-            width: 50%;
-            padding: 0px;
-            font-family: Franklin Gothic Book
-        }
-
-        .scroll {
-            overflow: auto;
-        }
-
-        .tooltip text {
-            font-family: Arial;
-            font-size: 10px;
-        }
-    </style>
-
-    <meta charset="UTF-8">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link href="history.css" rel="stylesheet" type="text/css" />
+    <link href="standings.css" rel="stylesheet" type="text/css" />
+    <title>The Bachelorette: Standings</title>
+    <link href="rose-shape.png" rel="icon" />
 </head>
 
 <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/homepage-icon.png" alt="" /></a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="standings.html">Standings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="charity.html">Charity</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="history.html">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
     <h1 align="center">🌹 Bachelorette 2019 Standings 🌹</h1>
     <p align="center">This page contains the current standings for Hannah B's season of the Bachelorette, as well
@@ -107,7 +85,12 @@
 	<div id='current_leader' align="center"></div>
 	<div align="center"><svg id="chart"></svg></div>
 	<p style="font-size:12px">Last updated: <span id="datetime"></span></p>-->
-
+    
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script type="text/javascript" src="standings.js"></script>
 
 </body>

@@ -1,0 +1,44 @@
+body {
+  /* font-family: Franklin Gothic Book; */
+  font-style: normal;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  overflow: hidden;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0px;
+  /* font-family: Franklin Gothic Book; */
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.tooltip text {
+  font-family: Arial;
+  font-size: 10px;
+}
