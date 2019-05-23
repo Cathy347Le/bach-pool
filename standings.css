@@ -1,9 +1,56 @@
 body {
+  background: url(https://i.imgur.com/MJAkxbh.png);
   /* font-family: Franklin Gothic Book; */
   font-style: normal;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+#mainNav {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 90%;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: black;
+  padding: 1.1em 1em !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #fed136;
+}
+
+.navbar-brand img {
+  width: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+h3.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0px 130px;
+  margin-bottom: 75px;
+  text-transform: none;
+  text-align: center;
 }
 
 th,
