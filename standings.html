@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -40,11 +40,6 @@
         </div>
     </nav>
     
-    <!-- <h1 align="center">🌹 Bachelorette 2019 Standings 🌹</h1>
-        <p align="center">This page contains the current standings for Hannah B's season of the Bachelorette, as well
-        as other visualizations and metrics.
-        Please make sure to check back in after each episode airs to check how your predictions have changed
-        after the drama unfolds.</p> -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -60,8 +55,6 @@
     </div>
 
 
-
-
     <div id='standings-rankings' class="row" style="overflow-y: scroll; height:1000px;">
         <div class="column" align='middle'>
             <p align='center'><b>Standings</b></p>
@@ -71,21 +64,25 @@
             <p align="center"> Select Name: <select align="center" id='nameDropdown'></select></p>
             <div id='name' align="center"></div>
             <div id="bach-picks-table" align="center"></div>
-            <p style="font-size:10px"><b><sup>1</sup>(RO) indicates that contestants’ position is not final; their
-                    position is noted by the order in which they received a rose in the most recent episode</b></p>
+            <p style="font-size:12px; color:gray; padding: 20px 100px 0px 100px;"><sup>1</sup>(RO) indicates that contestants’ position is not final; their
+                    position is noted by the order in which they received a rose in the most recent episode</p>
         </div>
     </div>
 
-    <h3 align="center">Compare your rankings with others!</h3>
-    <p align="center">This chart shows how similar your picks are to other contestants. The more "diagonal" the pattern,
-        the more closely your picks align with the other contestant (An R-squared is in the works and will be added at
-        some point in the near future). The dots shaded <b>
-            <font color="red">red</font>
-        </b> indicate that the Bach Pool entrant on the Y-axis predicted them to perform poorer than the candidates on
-        the X-axis. Conversely, the dots shaded <b>
-            <font color="green">green</font>
-        </b> indicate that the Bach Pool entrant on the Y-axis predicted them to perform better than the entrant on the
-        X-axis.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-uppercase text-center mt-5">Compare your rankings with others!</h2>
+                <h3 class="section-subheading text-muted">
+                    This chart shows how similar your picks are to other contestants. The more "diagonal" the pattern, the more closely your
+                    picks align with the other contestant (An R-squared is in the works and will be added at some point in the near future).
+                    The dots shaded <font color="red">red</font> ndicate that the Bach Pool entrant on the Y-axis predicted them to perform
+                    poorer than the candidates on the X-axis. Conversely, the dots shaded <font color="green">green</font> indicate that the
+                    Bach Pool entrant on the Y-axis predicted them to perform better than the entrant on the X-axis.
+                </h3>
+            </div>
+        </div>
+    </div>
 
     <div id='container' align="center">
         <p id='selector'> Compare <select align="center" id='first_contender'></select> and <select align="center"
@@ -102,11 +99,18 @@
 	<div align="center"><svg id="chart"></svg></div>
 	<p style="font-size:12px">Last updated: <span id="datetime"></span></p>-->
     
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script> -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     <script type="text/javascript" src="standings.js"></script>
 
 </body>
