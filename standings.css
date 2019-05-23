@@ -44,10 +44,6 @@ h3.section-subheading {
   text-align: center;
 }
 
-/* p {
-  font-size: 15px;
-} */
-
 th,
 td {
   padding: 8px;
@@ -57,7 +53,7 @@ td {
 
 th {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 td {
