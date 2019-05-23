@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <!-- <link href="history.css" rel="stylesheet" type="text/css" /> -->
     <link href="standings.css" rel="stylesheet" type="text/css" />
     <title>The Bachelorette: Standings</title>
     <link href="rose-shape.png" rel="icon" />
@@ -55,14 +54,15 @@
     </div>
 
 
-    <div id='standings-rankings' class="row" style="overflow-y: scroll; height:1000px;">
+    <!-- <div id='standings-rankings' class="row" style="overflow-y: scroll; height:1000px;"> -->
+        <div id='standings-rankings' class="row">
         <div class="column" align='middle'>
             <p align='center' class="text-uppercase"><b>Standings</b></p>
             <div id="ranking-table" align="center"></div>
         </div>
-        <div class="column" align='center'>
-            <p align="center" class="text-uppercase"> Select Name: <select align="center" id='nameDropdown'></select></p>
-            <div id='name' align="center"></div>
+            <div class="column" align='center'>
+                <p align="center" class="text-uppercase"> Select Name: <select align="center" id='nameDropdown'></select></p>
+                <div id='name' align="center"></div>
             <div id="bach-picks-table" align="center"></div>
             <p style="font-size:12px; color: gray; padding: 20px 100px 0px 100px;"><sup>1</sup>(RO) indicates that contestants’ position is not final; their
                     position is noted by the order in which they received a rose in the most recent episode</p>
@@ -110,9 +110,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
     <script type="text/javascript" src="standings.js"></script>
-
+    
 </body>
 
 </html>

@@ -78,6 +78,10 @@ td {
   overflow: auto;
 }
 
+svg .tooltip {
+  opacity: 1;
+}
+
 .tooltip text {
   font-family: Arial;
   font-size: 10px;
