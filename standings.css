@@ -44,6 +44,10 @@ h3.section-subheading {
   text-align: center;
 }
 
+.section-subheading.last-updated {
+  margin-bottom: 20px;
+}
+
 th,
 td {
   padding: 8px;
