@@ -8,10 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-a:hover {
-  color: #fec503;
-}
-
 .text-primary {
   color: #fed136 !important;
 }
@@ -36,10 +32,6 @@ a:hover {
   box-shadow: none;
 }
 
-#mainNav {
-  background-color: #212529;
-}
-
 #mainNav .navbar-toggler {
   font-size: 12px;
   right: 0;
@@ -50,17 +42,6 @@ a:hover {
   background-color: #fed136;
 }
 
-#mainNav .navbar-brand {
-  color: #fed136;
-}
-
-#mainNav .navbar-brand.active,
-#mainNav .navbar-brand:active,
-#mainNav .navbar-brand:focus,
-#mainNav .navbar-brand:hover {
-  color: #fec503;
-}
-
 #mainNav .navbar-nav .nav-item .nav-link {
   font-size: 90%;
   font-weight: 500;
@@ -69,7 +50,6 @@ a:hover {
   color: white;
 }
 
-#mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #fed136;
 }
@@ -137,9 +117,4 @@ header.masthead .intro-text .intro-heading {
   padding: 0px 200px;
   margin-bottom: 25px;
   text-shadow: 1px 1px 2px black;
-}
-
-.btn-disable {
-  cursor: url("http://icons.iconarchive.com/icons/tatice/cristal-intense/24/Ad-Aware-icon.png"),
-    auto;
 }
