@@ -8,31 +8,6 @@ body {
   background: url(https://i.imgur.com/MJAkxbh.png);
 }
 
-p {
-  line-height: 1.75;
-}
-
-a {
-  color: #fed136;
-}
-
-a:hover {
-  color: #fec503;
-}
-
-.text-primary {
-  color: #fed136 !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-}
-
 section h2.section-heading {
   font-size: 40px;
   margin-top: 0;
@@ -82,30 +57,20 @@ section h3.section-subheading {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
-::selection {
-  background: #fed136;
-  text-shadow: none;
-}
-
-img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
-  background: transparent;
-}
-
 #mainNav {
   padding-top: 25px;
   padding-bottom: 25px;
+  border: none;
+  background-color: transparent;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
   font-size: 90%;
+  font-size: 90%;
   font-weight: 500;
+  padding: 1.1em 1em !important;
   letter-spacing: 1px;
   color: black;
-  padding: 1.1em 1em !important;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -308,7 +273,35 @@ header.masthead .intro-text .intro-heading {
   background-color: #212529;
 }
 
-.btn-disable {
-  cursor: url("http://icons.iconarchive.com/icons/tatice/cristal-intense/24/Ad-Aware-icon.png"),
-    auto;
+@media (max-width: 599px) {
+  #mainNav .navbar-toggler {
+    font-size: 10px;
+    right: 0;
+    padding: 8px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: #fed136;
+  }
+  #mainNav {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    color: white;
+  }
+  .navbar-brand img {
+    width: 110px;
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 25px;
+  }
+  header.masthead .intro-text .intro-heading {
+    font-size: 12px;
+    padding: 0px 60px;
+  }
+  .btn {
+    font-size: 12px;
+  }
 }

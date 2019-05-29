@@ -35,8 +35,6 @@ body {
 #mainNav {
   padding-top: 25px;
   padding-bottom: 25px;
-  -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-  transition: padding-top 0.3s, padding-bottom 0.3s;
   border: none;
   background-color: transparent;
 }
@@ -90,7 +88,7 @@ header.masthead .intro-text .intro-heading {
   text-shadow: 1px 1px 2px black;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 599px) {
   #mainNav .navbar-toggler {
     font-size: 10px;
     right: 0;
