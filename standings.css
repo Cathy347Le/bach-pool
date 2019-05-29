@@ -91,7 +91,7 @@ svg .tooltip {
   font-size: 10px;
 }
 
-@media (max-width: 599px) {
+/* @media (max-width: 599px) {
   #mainNav .navbar-toggler {
     font-size: 10px;
     right: 0;
@@ -110,7 +110,7 @@ svg .tooltip {
     color: white;
   }
   .navbar-brand img {
-    width: 110px;
+    width: 300px;
   }
   header.masthead .intro-text .intro-lead-in {
     font-size: 25px;
@@ -122,3 +122,4 @@ svg .tooltip {
   .btn {
     font-size: 12px;
   }
+} */
