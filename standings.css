@@ -90,3 +90,35 @@ svg .tooltip {
   font-family: Arial;
   font-size: 10px;
 }
+
+@media (max-width: 599px) {
+  #mainNav .navbar-toggler {
+    font-size: 10px;
+    right: 0;
+    padding: 8px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: #fed136;
+  }
+  #mainNav {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    color: white;
+  }
+  .navbar-brand img {
+    width: 110px;
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 25px;
+  }
+  header.masthead .intro-text .intro-heading {
+    font-size: 12px;
+    padding: 0px 60px;
+  }
+  .btn {
+    font-size: 12px;
+  }
