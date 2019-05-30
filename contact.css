@@ -5,10 +5,6 @@
   justify-content: center;
 }
 
-.image-container {
-  display: flex;
-}
-
 .image-container div {
   margin: 0px 40px;
 }
@@ -63,5 +59,8 @@ h3 {
   }
   .team-description {
     font-size: 15px;
+  }
+  .image-container div {
+    margin: 0px 20px;
   }
 }
