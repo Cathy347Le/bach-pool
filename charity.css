@@ -4,10 +4,10 @@
   justify-content: center;
 }
 
-section {
+/* section {
   width: 600px;
   padding: 0px;
-}
+} */
 
 .card-img {
   width: 8rem;
@@ -30,11 +30,12 @@ section {
   padding: 1.3rem 0rem;
 }
 
-.current-charity-container {
+/* .current-charity-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+  flex-direction: column;
+} */
 
 .current-charity-container div {
   margin: 20px 40px;
@@ -98,5 +99,8 @@ main h3.section-subheading {
   }
   .past-charity-container p {
     padding: 10px;
+  }
+  section {
+    width: 200px;
   }
 }
