@@ -57,10 +57,10 @@ h3 {
   h5 {
     font-size: 20px;
   }
-  .team-description {
+  p.team-description {
     font-size: 15px;
   }
-  p.image-container div {
+  .image-container div {
     margin: 0px 20px;
   }
 }
