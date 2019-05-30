@@ -91,9 +91,12 @@ main h3.section-subheading {
     padding: 0px;
   }
   section h3 {
-    font-size: 18x;
+    font-size: 21px;
   }
   section p {
     font-size: 16px;
+  }
+  .past-charity-container p {
+    padding: 10px;
   }
 }
