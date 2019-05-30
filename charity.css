@@ -90,4 +90,10 @@ main h3.section-subheading {
   main h3.section-subheading {
     padding: 0px;
   }
+  section h3 {
+    font-size: 18x;
+  }
+  section p {
+    font-size: 16px;
+  }
 }
