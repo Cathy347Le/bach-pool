@@ -85,3 +85,9 @@ main h3.section-subheading {
   margin-bottom: 75px;
   text-transform: none;
 }
+
+@media (max-width: 599px) {
+  main h3.section-subheading {
+    padding: 0px;
+  }
+}
