@@ -75,7 +75,7 @@ header.masthead .intro-text {
 header.masthead .intro-text .intro-lead-in {
   font-size: 50px;
   font-weight: 800;
-  line-height: 22px;
+  /* line-height: 22px; */
   margin-bottom: 25px;
   text-shadow: 1px 1px 2px black;
 }
@@ -114,6 +114,7 @@ header.masthead .intro-text .intro-heading {
     padding: 0px 60px;
   }
   .btn {
-    font-size: 12px;
+    font-size: 10px;
+    padding: 7px;
   }
 }
