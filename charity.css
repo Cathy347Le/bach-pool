@@ -85,12 +85,15 @@ main h3.section-subheading {
     padding: 0px;
   }
   section h3 {
-    font-size: 21px;
+    font-size: 30px;
   }
-  section p {
-    font-size: 16px;
+  section > p {
+    font-size: 22px;
   }
-  /* .past-charity-container p {
-    padding: 10px;
-  } */
+  .card-text {
+    font-size: 18px;
+  }
+  .past-charity-container {
+    border-left: none;
+  }
 }
