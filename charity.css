@@ -96,4 +96,12 @@ main h3.section-subheading {
   .past-charity-container {
     border-left: none;
   }
+  /* https://www.steckinsights.com/shorten-length-border-bottom-pure-css/ */
+  .current-charity-box:after {
+    content: "";
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 80%;
+    border-bottom: 8px double gray;
+  }
 }
