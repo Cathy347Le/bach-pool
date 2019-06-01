@@ -135,12 +135,19 @@ h2 {
   margin-bottom: 15px;
 }
 
+.participate p {
+  margin: 15px auto;
+}
+
 @media (max-width: 599px) {
   .play-steps {
     margin-bottom: 30px;
     border-style: none;
   }
-  .col.bg-warning.flex-middle.p-3 {
+  .participate {
     text-align: justify;
+  }
+  .border-line {
+    border-style: none;
   }
 }
