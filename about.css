@@ -101,13 +101,12 @@
   border: 3px solid black;
 }
 
-.place-first-row {
-  margin-top: 50px;
-  padding: 0px 150px;
-}
+/* .place-first-row {
+  margin: 50px 150px 20px 150px;
+} */
 
 .place-second-row {
-  padding: 30px 400px;
+  margin: 0px 390px;
 }
 
 /* Rules section */
@@ -135,6 +134,10 @@ h2 {
   margin-bottom: 15px;
 }
 
+.participate {
+  margin: 30px 0px;
+}
+
 .participate p {
   margin: 15px auto;
 }
@@ -149,5 +152,11 @@ h2 {
   }
   .border-line {
     border-style: none;
+  }
+  .place-first-row {
+    margin: 50px 100px 20px 100px;
+  }
+  .place-second-row {
+    margin: 0px;
   }
 }
