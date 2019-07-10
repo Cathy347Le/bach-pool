@@ -91,6 +91,21 @@ svg .tooltip {
   font-size: 10px;
 }
 
+.line {
+  fill: none;
+  stroke: #EF5285;
+  stroke-width: 2px;
+}
+
+.text {
+  font-family:Arial;
+  font-size:12px;
+}
+
+td .background-color{
+  opacity:0.5;
+}
+
 /* @media (max-width: 599px) {
   #mainNav .navbar-toggler {
     font-size: 10px;
