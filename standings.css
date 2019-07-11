@@ -78,6 +78,13 @@ td {
   /* font-family: Franklin Gothic Book; */
 }
 
+.jump_to_column {
+  float: left;
+  width: 25%;
+  padding: 0px;
+  /* font-family: Franklin Gothic Book; */
+}
+
 .scroll {
   overflow: auto;
 }

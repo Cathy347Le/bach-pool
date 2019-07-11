@@ -56,17 +56,42 @@
                     after the drama unfolds.
                 </h3>
                 <h3 class="section-subheading text-muted last-updated">
-                    Data last updated: Mon July 1, 2019
+                    Data last updated: Mon July 9, 2019
                 </h3>
             </div>
         </div>
     </div>
+    
+    <div class="container_alt" style='border-bottom: 1px solid #333;border-top: 1px solid #333;'>
+        <div class="row">
+            <div class="col-lg-12">
+                    <h4 class="text-center">Jump to specific stats</h4>
+            </div>
+        </div>
+        <p>
+            <div class="row">
+              <div class="jump_to_column" align='middle'>
+                <p style="font-family:Franklin Gothic Book"><a href="#standings">Standings & Picks</a></p>
+              </div>
+              <div class="jump_to_column" align='middle' style="border-right: 1px solid black;border-left: 1px solid black;">
+                <p style="font-family:Franklin Gothic Book"><a href="#compare">Pick Comparisons</a></p>
+              </div>
+              <div class="jump_to_column" align='middle' >
+                <p style="font-family:Franklin Gothic Book"><a href="#weekly">Weekly Changes</a></p>
+              </div>    
+              <div class="jump_to_column" align='middle' style="border-right: 1px solid black;border-left: 1px solid black;">
+                <p style="font-family:Franklin Gothic Book"><a href="#demos">Pick Performance by Demographics</a></p>
+              </div>              
+            </div>    
+        </p>
+  </div>
 
+  <br style='margin:10px 0'></br>
 
     <!-- <div id='standings-rankings' class="row" style="overflow-y: scroll; height:1000px;"> -->
         <div id='standings-rankings' class="row">
         <div class="column" align='middle'>
-            <p align='center' class="text-uppercase"><b>Standings</b></p>
+            <p align='center' class="text-uppercase"><a id="standings"></a><b>Standings</b></p>
             <div id="ranking-table" align="center"></div>
         </div>
             <div class="column" align='center'>
@@ -81,11 +106,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-uppercase text-center mt-5">Compare your rankings with others!</h2>
+                <h2 class="section-heading text-uppercase text-center mt-5"><a id="compare"></a>Compare your rankings with others!</h2>
                 <h3 class="section-subheading text-muted">
                     This chart shows how similar your picks are to other contestants. The more "diagonal" the pattern, the more closely your
                     picks align with the other contestant (An R-squared is in the works and will be added at some point in the near future).
-                    The dots shaded <font color="red">red</font> ndicate that the Bach Pool entrant on the Y-axis predicted them to perform
+                    The dots shaded <font color="red">red</font> indicate that the Bach Pool entrant on the Y-axis predicted them to perform
                     poorer than the candidates on the X-axis. Conversely, the dots shaded <font color="green">green</font> indicate that the
                     Bach Pool entrant on the Y-axis predicted them to perform better than the entrant on the X-axis.
                 </h3>
@@ -106,15 +131,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-uppercase text-center mt-5">View Week over Week Changes in Standings</h2>
+                <h2 class="section-heading text-uppercase text-center mt-5"><a id="weekly"></a>View Week over Week Changes in Standings</h2>
                     <!-- Commenting out rankings visualization until we actually have the data-->
-                	<p class="loading">Loading...</p>
-                	<div id='current_leader' align="center"></div>
-                	<div align="center"><svg id="chart"></svg></div>
-                	<p style="font-size:12px">Standings as of: <span id="datetime"></span></p>
+                    <p class="loading">Loading...</p>
+                    <div id='current_leader' align="center"></div>
+                    <div align="center"><svg id="chart"></svg></div>
+                    <p style="font-size:12px">Standings as of: <span id="datetime"></span></p>
             </div>
         </div>
-    </div>    
+    </div>   
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-uppercase text-center mt-5"><a id="demos"></a>View Performance by Demographics</h2>
+                <h3 class="section-subheading text-muted"> When entering their picks, contestants were asked to fill out self-reported demographics, including their age, gender, race, how many seasons of the show (both Bachelor and Bachelorette) they've watched in the past, as well as other metadata, including how long it took them to choose their picks. This data was then used to assess overall demographic performance by taking the average pick score by group. Certain groups, including racial groups, with small n-sizes (below 5) were folded into other groups.
+                </h3>    
+                <center><img src="https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png" width="768" height="576" align="middle"></center>
+            </div>
+        </div>
+    </div>   
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
