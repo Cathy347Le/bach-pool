@@ -105,7 +105,7 @@ function weeklyStandings(chart_data, width, height) {
 	// week
 	var x = d3.scaleLinear()
 		.range([margin.left , width - margin.right])
-		.domain([1,10]);
+		.domain([1,12]);
 
 	num_rows = chart_data.filter(function(d) { return d.week == "1" }).length	
 
