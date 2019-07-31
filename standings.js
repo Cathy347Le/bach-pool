@@ -29,7 +29,7 @@ function draw(data, tabletop) {
     rose_order = weekly_results.elements
 
     var max = _.maxBy(rose_order, function (o) {
-        return o.week;
+        return parseInt(o.week);
     })
 
     most_recent_rose_order = rose_order.filter(function (a) {
