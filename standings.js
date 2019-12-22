@@ -1,12 +1,71 @@
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml';
+var seasonSelector = d3.select('#season')
 
-function renderSpreadsheetData() {
-    Tabletop.init({
-        key: publicSpreadsheetUrl,
-        callback: draw,
-        simpleSheet: true
+selectValue = ''
+load = 0
+list = ''
+
+seasonSelector
+  .selectAll("option")
+  .data(['Peter W. (2020)','Hannah B. (2019)'])
+  .enter()
+  .append("option")
+    .attr("value", function (d) { return d; })
+    .text(function (d) {
+        return d[0].toUpperCase() + d.slice(1,d.length);
     })
+
+    seasonSelector.on('change',function() {
+
+        var selectValue = d3.select(this)
+            .property('value');
+
+        loadSeasonData(selectValue);
+        console.log(selectValue)
+        list = ''
+        load = 1
+    })
+
+function loadSeasonData(value) {
+
+    if(value == "Hannah B. (2019)"){
+        
+        d3.select("#ranking-table tbody").remove();
+        d3.select("#ranking-table thead").remove();
+
+        ///////////////////////////////////////
+        //
+        // these are the men
+        //
+        ///////////////////////////////////////
+
+        contestants = ["Brian", "Cam", "Chasen", "Connor J.", "Connor S.", "Daron", "Devin", "Dustin", "Dylan", "Garrett", "Grant",
+            "Hunter", "Jed", "Joe", "Joey J.", "John Paul Jones", "Jonathan", "Kevin", "Luke P.", "Luke S.", "Matt Donald",
+            "Matteo", "Matthew", "Mike", "Peter", "Ryan", "Scott", "Thomas", "Tyler C.", "Tyler G."]
+
+        var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml"
+
+        function renderSpreadsheetData() {
+            Tabletop.init({
+                key: publicSpreadsheetUrl,
+                callback: draw,
+                simpleSheet: true
+            })
+        }
+        renderSpreadsheetData();
+    } 
+
+    else if(value == "Peter W. (2020)"){
+
+        d3.select("#ranking-table tbody").remove();
+        d3.select("#ranking-table thead").remove();
+
+        var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml"
+    } 
 }
+
+window.addEventListener('load', function() {
+    loadSeasonData("Peter W. (2020)")
+})  
 
 function draw(data, tabletop) {
 
@@ -97,19 +156,6 @@ function draw(data, tabletop) {
     rankingTable(ranking_data)
 
 }
-
-renderSpreadsheetData();
-
-///////////////////////////////////////
-//
-// these are the men
-//
-///////////////////////////////////////
-
-
-contestants = ["Brian", "Cam", "Chasen", "Connor J.", "Connor S.", "Daron", "Devin", "Dustin", "Dylan", "Garrett", "Grant",
-    "Hunter", "Jed", "Joe", "Joey J.", "John Paul Jones", "Jonathan", "Kevin", "Luke P.", "Luke S.", "Matt Donald",
-    "Matteo", "Matthew", "Mike", "Peter", "Ryan", "Scott", "Thomas", "Tyler C.", "Tyler G."]
 
 function UserPicks(data) {
 
@@ -247,7 +293,7 @@ function matchUp(data) {
 
     var sel1 = names[Math.floor(Math.random() * names.length)];
 
-    names = names.sort(function (x, y) { return x == sel1 ? -1 : y == sel1 ? 1 : 0; });
+    names = names.sort()
 
     var first_contender = d3.select('#first_contender')
 
@@ -313,7 +359,7 @@ function matchUp(data) {
         d3.select("#compare-picks svg").remove()
 
         var margin = { top: 20, right: 20, bottom: 30, left: 50 },
-            width = 500 - margin.left - margin.right,
+            width = 750 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         // set the ranges
@@ -352,6 +398,7 @@ function matchUp(data) {
             return newItem;
         });
 
+        cand2 = cand2_data[0].cand_2_name
         cand2_name = cand2_data[0].cand_2_pick
 
         comb = _.map(cand1_data, function (obj) {
@@ -368,8 +415,33 @@ function matchUp(data) {
 
         });
 
+        ///////////////////////////////////////
+        //
+        // Linear regression to determine pick similarity
+        //
+        ///////////////////////////////////////
+
+        linearRegression = ss.linearRegression(comb.map(d => [d.cand_1_pick, d.cand_2_pick]))
+        linearRegressionLine = ss.linearRegressionLine(linearRegression)
+
+        xCoordinates = [0, 30];
+
+        xCoordinates = xCoordinates.map(d => ({
+            x: +d,                         
+            y: linearRegressionLine(+d)
+        }));
+
+        document.getElementsByClassName("Similarity")[0].innerHTML = "Picks for <b>" + cand1 + "</b> & <b>" + cand2 + "</b> are " + Math.floor((linearRegression.m) * 100) + "% similar*";
+
         x_scatter.domain(d3.extent(comb, function (d) { return d.cand_1_pick; })).nice();
         y_scatter.domain(d3.extent(comb, function (d) { return d.cand_2_pick; })).nice();
+
+        compare_picks_plot.append("line")
+            .attr("class", "regression")
+            .attr("x1", x_scatter(xCoordinates[0].x))
+            .attr("y1", y_scatter(xCoordinates[0].y))
+            .attr("x2", x_scatter(xCoordinates[1].x))
+            .attr("y2", y_scatter(xCoordinates[1].y));    
 
         compare_picks_plot.selectAll(".dot")
             .data(comb)

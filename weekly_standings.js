@@ -4,6 +4,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 //load data from google sheet doc
 window.addEventListener('load', function() {
 
+	console.log(d3.select('#season'))
+
 	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml';
 
 	function renderSpreadsheetData() {

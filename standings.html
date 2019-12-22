@@ -49,9 +49,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="section-heading text-uppercase text-center">🌹 Standings & Data 🌹</h2>
+                <h4 class="section-heading text-uppercase text-center"> Select Season: <select class = "title" align="center" id='season'></select></h4>    
                 <h3 class="section-subheading text-muted">
-                    This page contains the current standings for Hannah B's season of the Bachelorette, as well
-                    as other visualizations and metrics.
+                    This page contains the current standings for current and historical seasons of the Bachelor/Bachelorette, as well as other visualizations and metrics.
                     Please make sure to check back in after each episode airs to check how your predictions have changed
                     after the drama unfolds.
                 </h3>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="container_alt" style='border-bottom: 1px solid #333;border-top: 1px solid #333;'>
+    <div class="container_alt" style='border-bottom: 5px solid #333;border-top: 5px solid #333;'>
         <div class="row">
             <div class="col-lg-12">
                     <h4 class="text-center">Jump to specific stats</h4>
@@ -98,6 +98,7 @@
                 <p align="center" class="text-uppercase"> Select Name: <select align="center" id='nameDropdown'></select></p>
                 <div id='name' align="center"></div>
             <div id="bach-picks-table" align="center"></div>
+
             <p style="font-size:12px; color: gray; padding: 20px 100px 0px 100px;"><sup>1</sup>(RO) indicates that contestants’ position is not final; their
                     position is noted by the order in which they received a rose in the most recent episode</p>
         </div>
@@ -108,8 +109,8 @@
             <div class="col-lg-12">
                 <h2 class="section-heading text-uppercase text-center mt-5"><a id="compare"></a>Compare your rankings with others!</h2>
                 <h3 class="section-subheading text-muted">
-                    This chart shows how similar your picks are to other contestants. The more "diagonal" the pattern, the more closely your
-                    picks align with the other contestant (An R-squared is in the works and will be added at some point in the near future).
+                    This chart shows how similar your picks are to other contestants. The dotted line represents the similarity between the picks of any two contestants, along with a simliarity score. The higher the score, the higher the R-squared and the more closely your
+                    picks align with the other contestant. 
                     The dots shaded <font color="red">red</font> indicate that the Bach Pool entrant on the Y-axis predicted them to perform
                     poorer than the candidates on the X-axis. Conversely, the dots shaded <font color="green">green</font> indicate that the
                     Bach Pool entrant on the Y-axis predicted them to perform better than the entrant on the X-axis.
@@ -125,8 +126,9 @@
             <div id=result_text></div>
         </p>
     </div>
+    <div class="Similarity"></div>
     <div align="center" id="compare-picks"></div>
-
+    <p align="center" style="font-size:10px">*Similarity is defined using the regression co-efficient (R-squared) for the two entries.</span></p>
 
     <div class="container">
         <div class="row">
@@ -165,6 +167,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src='https://unpkg.com/simple-statistics@7.0.6/dist/simple-statistics.min.js'></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script type="text/javascript" src="standings.js"></script>
     <script type="text/javascript" src="weekly_standings.js"></script>
