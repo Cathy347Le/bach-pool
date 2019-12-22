@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="container_alt" style='border-bottom: 5px solid #333;border-top: 5px solid #333;'>
+    <div class="container_alt" style='border-bottom: 2px solid #333;border-top: 2px solid #333;'>
         <div class="row">
             <div class="col-lg-12">
                     <h4 class="text-center">Jump to specific stats</h4>
@@ -126,7 +126,7 @@
             <div id=result_text></div>
         </p>
     </div>
-    <div class="Similarity"></div>
+    <div id='Similarity' align="center" style="font-size:10px"></div>
     <div align="center" id="compare-picks"></div>
     <p align="center" style="font-size:10px">*Similarity is defined using the regression co-efficient (R-squared) for the two entries.</span></p>
 
@@ -149,7 +149,7 @@
                 <h2 class="section-heading text-uppercase text-center mt-5"><a id="demos"></a>View Performance by Demographics</h2>
                 <h3 class="section-subheading text-muted"> When entering their picks, contestants were asked to fill out self-reported demographics, including their age, gender, race, how many seasons of the show (both Bachelor and Bachelorette) they've watched in the past, as well as other metadata, including how long it took them to choose their picks. This data was then used to assess overall demographic performance by taking the average pick score by group. Certain groups, including racial groups, with small n-sizes (below 5) were folded into other groups.
                 </h3>    
-                <center><img src="https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png" width="768" height="576" align="middle"></center>
+                <div class="demos" id="demographic-perf"></div>
             </div>
         </div>
     </div>   

@@ -3,6 +3,7 @@ var seasonSelector = d3.select('#season')
 selectValue = ''
 load = 0
 list = ''
+roses_and_picks = ''
 
 seasonSelector
   .selectAll("option")
@@ -19,19 +20,38 @@ seasonSelector
         var selectValue = d3.select(this)
             .property('value');
 
-        loadSeasonData(selectValue);
-        console.log(selectValue)
+        // clearing existing html/d3 elements when toggling between seasons
+
         list = ''
+        names = ''
+        roses_and_picks = ''
         load = 1
+
+        d3.select("#bach-picks-table tbody").remove();
+        d3.select("#bach-picks-table thead").remove();
+
+        d3.select("#ranking-table tbody").remove();
+        d3.select("#ranking-table thead").remove();  
+
+        d3.select("#compare-picks").select("svg").remove();   
+        d3.select('#second_contender').empty()
+
+        document.getElementById("nameDropdown").innerHTML = null; 
+
+        document.getElementById("second_contender").innerHTML = null; 
+        document.getElementById("first_contender").innerHTML = null; 
+        document.getElementById("name").innerHTML = null;
+        document.getElementById("demographic-perf").innerHTML = null;
+        document.getElementById("Similarity").innerHTML = null;
+
+        loadSeasonData(selectValue);
+      
     })
 
 function loadSeasonData(value) {
 
     if(value == "Hannah B. (2019)"){
         
-        d3.select("#ranking-table tbody").remove();
-        d3.select("#ranking-table thead").remove();
-
         ///////////////////////////////////////
         //
         // these are the men
@@ -52,13 +72,22 @@ function loadSeasonData(value) {
             })
         }
         renderSpreadsheetData();
+
+        // linking to demographic plot
+
+        var linkElement = document.createElement('a');
+        linkElement.href = "https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png";
+
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png");
+
+        linkElement.appendChild(elem);
+
+        document.getElementById("demographic-perf").appendChild(linkElement);
+
     } 
 
     else if(value == "Peter W. (2020)"){
-
-        d3.select("#ranking-table tbody").remove();
-        d3.select("#ranking-table thead").remove();
-
         var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml"
     } 
 }
@@ -129,20 +158,6 @@ function draw(data, tabletop) {
     UserPicks(roses_and_picks)
 
     matchUp(long_data)
-
-    ///////////////////////////////////////
-    //
-    // load weekly rankings -- for trend chart
-    //
-    ///////////////////////////////////////	
-
-    spaghetti = tabletop.sheets("weekly rankings")
-    spaghetti_data = spaghetti.elements
-
-    //var chartEl = document.querySelector('#chart');
-    //var rect = chartEl.getBoundingClientRect();
-    //document.querySelector('.loading').style.display = 'none';
-    //drawChart(spaghetti_data, rect.width, rect.height);	
 
     ///////////////////////////////////////
     //
@@ -431,7 +446,7 @@ function matchUp(data) {
             y: linearRegressionLine(+d)
         }));
 
-        document.getElementsByClassName("Similarity")[0].innerHTML = "Picks for <b>" + cand1 + "</b> & <b>" + cand2 + "</b> are " + Math.floor((linearRegression.m) * 100) + "% similar*";
+        document.getElementById("Similarity").innerHTML = "Picks for <b>" + cand1 + "</b> & <b>" + cand2 + "</b> are " + Math.floor((linearRegression.m) * 100) + "% similar*";
 
         x_scatter.domain(d3.extent(comb, function (d) { return d.cand_1_pick; })).nice();
         y_scatter.domain(d3.extent(comb, function (d) { return d.cand_2_pick; })).nice();
@@ -565,8 +580,6 @@ function matchUp(data) {
 
 function rankingTable(tabledata) {
 
-    console.log(tabledata)
-
     rank_data = Object.create(tabledata);
 
     // format the data
@@ -643,8 +656,6 @@ function rankingTable(tabledata) {
         .append('tr');
 
     rows.exit().remove();
-
-    console.log(rank_data)
 
     min = _.minBy(rank_data, function (o) {
         return o.change_score;

@@ -7,6 +7,18 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.demos {
+   width: 768px; /* I took the width from your post and placed it in css */
+   height: 576px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.demos img {
+   height: 100%;
+   width: 100%;
+}
+
 .title {
   font-family: Franklin Gothic Book;
   font-size: 24px;
