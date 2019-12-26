@@ -20,7 +20,8 @@ window.addEventListener('load', function() {
 		var chartEl = document.querySelector('#chart');
 		var rect = chartEl.getBoundingClientRect();
 		document.querySelector('.loading').style.display = 'none';
-		weeklyStandings(spaghetti_data, rect.width, rect.height);	
+
+		weeklyStandings(spaghetti_data, 850, 1400);	
 
 	}
 
@@ -239,8 +240,8 @@ function weeklyStandings(chart_data, width, height) {
 		.attr("class", "line")
 		.style("opacity", 0.75)
 		.attr("d", function(d){
-				return valueline(d.values)
-			});	
+			return valueline(d.values)
+		});	
 
 	chart.selectAll(".dot")
         .data(chart_data)

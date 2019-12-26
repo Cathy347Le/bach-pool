@@ -310,6 +310,8 @@ function matchUp(data) {
 
     names = names.sort()
 
+    names = names.sort(function (x, y) { return x == sel2 ? -1 : y == sel2 ? 1 : 0; });
+
     var first_contender = d3.select('#first_contender')
 
     first_contender
