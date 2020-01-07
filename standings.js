@@ -88,7 +88,40 @@ function loadSeasonData(value) {
     } 
 
     else if(value == "Peter W. (2020)"){
+
+        ///////////////////////////////////////
+        //
+        // these are the women
+        //
+        ///////////////////////////////////////
+
+		contestants = ["Alayah","Avonlea","Alexa","Courtney","Deandra","Eunice","Hannah Ann","Jade",
+			"Jasmine","Jenna","Kiarra","Katrina","Kelley","Kelsey","Kylie","Lauren","Lexi","Madison",
+			"Maurissa","Megan","Mykenna","Natasha","Payton","Sarah","Savannah","Shiann","Sydney","Tammy",
+			"Victoria F.","Victoria P."]
+
         var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml"
+ 
+        var linkElement = document.createElement('a');
+        linkElement.href = "https://raw.githubusercontent.com/Cathy347Le/bach-pool/master/images/demo_plot.png";
+
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "https://raw.githubusercontent.com/Cathy347Le/bach-pool/master/images/demo_plot.png");
+
+        linkElement.appendChild(elem);
+
+        document.getElementById("demographic-perf").appendChild(linkElement);
+
+		function renderSpreadsheetData() {
+            Tabletop.init({
+                key: publicSpreadsheetUrl,
+                callback: draw,
+                simpleSheet: true
+            })
+        }
+
+        renderSpreadsheetData();
+
     } 
 }
 
@@ -167,6 +200,8 @@ function draw(data, tabletop) {
 
     rankings_over_time = tabletop.sheets("weekly rankings")
     ranking_data = rankings_over_time.elements
+
+    console.log(ranking_data)
 
     rankingTable(ranking_data)
 
@@ -288,7 +323,7 @@ function UserPicks(data) {
 
     }
 
-    temp_filter = 'Age Order'
+    temp_filter = names[0]
 
     updateTable(merged_data, temp_filter)
 
@@ -305,10 +340,9 @@ function matchUp(data) {
     });
 
     var names = _.map(list, 'Name');
+    names = names.sort()
 
     var sel1 = names[Math.floor(Math.random() * names.length)];
-
-    names = names.sort()
 
     names = names.sort(function (x, y) { return x == sel2 ? -1 : y == sel2 ? 1 : 0; });
 
@@ -592,6 +626,8 @@ function rankingTable(tabledata) {
         //d.Correct_fmt = +d.Correct_fmt
     });
 
+    console.log(rank_data)
+
     var weeks = [...new Set(rank_data.map(item => item.week))];
 
     var this_week = Math.max(...weeks)
@@ -602,8 +638,9 @@ function rankingTable(tabledata) {
     previous_week_ranks.forEach(function (d) {
         d.prev_Score = +d.Score
         d.prev_rank = +d.standing
-
     });
+
+	console.log(current_week_ranks)
 
     Object.keys(previous_week_ranks).forEach(o => {
         previous_week_ranks.forEach(p =>
@@ -623,12 +660,22 @@ function rankingTable(tabledata) {
         }));
     });
 
-    current_week_ranks.forEach(function (d) {
-        d.change_score = Math.round((+d.Score - +d.prev_Score) * 100) / 100
-        d.change_standing = +d.prev_rank - +d.standing
+    if(this_week > 1){
+	    current_week_ranks.forEach(function (d) {
+	        d.change_score = Math.round((+d.Score - +d.prev_Score) * 100) / 100
+	        d.change_standing = +d.prev_rank - +d.standing
 
-        d.change_standing = d.change_standing > 0 ? "+" + d.change_standing : d.change_standing;
-    });
+	        d.change_standing = d.change_standing > 0 ? "+" + d.change_standing : d.change_standing;
+	    });
+	}
+	else{
+	    current_week_ranks.forEach(function (d) {
+	        d.change_score = 0
+	        d.change_standing = 0
+
+	        d.change_standing = 0
+	    });		
+	}
 
     d3.select("#ranking-table tbody").remove();
     d3.select("#ranking-table thead").remove();

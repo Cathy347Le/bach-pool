@@ -4,7 +4,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 //load data from google sheet doc
 window.addEventListener('load', function() {
 
-	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml';
+	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml';
 
 	function renderSpreadsheetData() {
 		Tabletop.init( { key: publicSpreadsheetUrl,
