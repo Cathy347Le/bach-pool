@@ -344,9 +344,11 @@ function matchUp(data) {
 
     var sel1 = names[Math.floor(Math.random() * names.length)];
 
+    console.log(sel1)
+
     names = names.sort(function (x, y) { return x == sel2 ? -1 : y == sel2 ? 1 : 0; });
 
-    var first_contender = d3.select('#first_contender')
+    first_contender = d3.select('#first_contender').attr("value", sel1)
 
     first_contender
         .selectAll("option")
@@ -354,6 +356,7 @@ function matchUp(data) {
         .enter()
         .append("option")
         .attr("value", function (d) { return d; })
+        .property("selected", function(d){ return d === sel1; })
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1, d.length);
         })
@@ -425,7 +428,7 @@ function matchUp(data) {
                 "translate(" + margin.left + "," + margin.top + ")");
 
         cand1_data = data.filter(function (a) {
-            return a.Name == cand1;
+            return a.Name == sel1;
         });
 
         cand1_data = _.map(cand1_data, item => {
@@ -439,7 +442,7 @@ function matchUp(data) {
         cand1 = cand1_data[0].cand_1_name
 
         cand2_data = data.filter(function (a) {
-            return a.Name == cand2;
+            return a.Name == sel2;
         });
 
         cand2_data = _.map(cand2_data, item => {
@@ -721,8 +724,8 @@ function rankingTable(tabledata) {
     max_change2 = max["change_standing"]
 
     color = d3.scaleLinear()
-        .domain([1, -.5])
-        .range(["#ff4500", "#ffffff"]);
+        .domain([max["Score"], -.5])
+        .range(["#71e554", "#ffffff"]);
 
     score_change = d3.scaleLinear()
         .domain([min_change, max_change])
