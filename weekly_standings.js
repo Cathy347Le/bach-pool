@@ -4,7 +4,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 //load data from google sheet doc
 window.addEventListener('load', function() {
 
-	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml';
+	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml';
 
 	function renderSpreadsheetData() {
 		Tabletop.init( { key: publicSpreadsheetUrl,
@@ -14,14 +14,14 @@ window.addEventListener('load', function() {
 
 	function draw(data, tabletop) {
 
-
 		spaghetti = tabletop.sheets("weekly rankings")
 		spaghetti_data = spaghetti.elements
 
 		var chartEl = document.querySelector('#chart');
 		var rect = chartEl.getBoundingClientRect();
 		document.querySelector('.loading').style.display = 'none';
-		weeklyStandings(spaghetti_data, rect.width, rect.height);	
+
+		weeklyStandings(spaghetti_data, 850, 1400);	
 
 	}
 
@@ -240,8 +240,8 @@ function weeklyStandings(chart_data, width, height) {
 		.attr("class", "line")
 		.style("opacity", 0.75)
 		.attr("d", function(d){
-				return valueline(d.values)
-			});	
+			return valueline(d.values)
+		});	
 
 	chart.selectAll(".dot")
         .data(chart_data)
