@@ -1,12 +1,133 @@
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml';
+var seasonSelector = d3.select('#season')
 
-function renderSpreadsheetData() {
-    Tabletop.init({
-        key: publicSpreadsheetUrl,
-        callback: draw,
-        simpleSheet: true
+selectValue = ''
+load = 0
+list = ''
+roses_and_picks = ''
+
+seasonSelector
+  .selectAll("option")
+  .data(['Peter W. (2020)','Hannah B. (2019)'])
+  .enter()
+  .append("option")
+    .attr("value", function (d) { return d; })
+    .text(function (d) {
+        return d[0].toUpperCase() + d.slice(1,d.length);
     })
+
+    seasonSelector.on('change',function() {
+
+        var selectValue = d3.select(this)
+            .property('value');
+
+        // clearing existing html/d3 elements when toggling between seasons
+
+        list = ''
+        names = ''
+        roses_and_picks = ''
+        load = 1
+
+        d3.select("#bach-picks-table tbody").remove();
+        d3.select("#bach-picks-table thead").remove();
+
+        d3.select("#ranking-table tbody").remove();
+        d3.select("#ranking-table thead").remove();  
+
+        d3.select("#compare-picks").select("svg").remove();   
+        d3.select('#second_contender').empty()
+
+        document.getElementById("nameDropdown").innerHTML = null; 
+
+        document.getElementById("second_contender").innerHTML = null; 
+        document.getElementById("first_contender").innerHTML = null; 
+        document.getElementById("name").innerHTML = null;
+        document.getElementById("demographic-perf").innerHTML = null;
+        document.getElementById("Similarity").innerHTML = null;
+
+        loadSeasonData(selectValue);
+      
+    })
+
+function loadSeasonData(value) {
+
+    if(value == "Hannah B. (2019)"){
+        
+        ///////////////////////////////////////
+        //
+        // these are the men
+        //
+        ///////////////////////////////////////
+
+        contestants = ["Brian", "Cam", "Chasen", "Connor J.", "Connor S.", "Daron", "Devin", "Dustin", "Dylan", "Garrett", "Grant",
+            "Hunter", "Jed", "Joe", "Joey J.", "John Paul Jones", "Jonathan", "Kevin", "Luke P.", "Luke S.", "Matt Donald",
+            "Matteo", "Matthew", "Mike", "Peter", "Ryan", "Scott", "Thomas", "Tyler C.", "Tyler G."]
+
+        var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1cI78iHZaqsk9i3QPYZnbaIy_ZIFK0xct1yC4XItZZkk/pubhtml"
+
+        function renderSpreadsheetData() {
+            Tabletop.init({
+                key: publicSpreadsheetUrl,
+                callback: draw,
+                simpleSheet: true
+            })
+        }
+        renderSpreadsheetData();
+
+        // linking to demographic plot
+
+        var linkElement = document.createElement('a');
+        linkElement.href = "https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png";
+
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "https://raw.githubusercontent.com/GWarrenn/bachelor-ette/master/results/demo_plot.png");
+
+        linkElement.appendChild(elem);
+
+        document.getElementById("demographic-perf").appendChild(linkElement);
+
+    } 
+
+    else if(value == "Peter W. (2020)"){
+
+        ///////////////////////////////////////
+        //
+        // these are the women
+        //
+        ///////////////////////////////////////
+
+		contestants = ["Alayah","Avonlea","Alexa","Courtney","Deandra","Eunice","Hannah Ann","Jade",
+			"Jasmine","Jenna","Kiarra","Katrina","Kelley","Kelsey","Kylie","Lauren","Lexi","Madison",
+			"Maurissa","Megan","Mykenna","Natasha","Payton","Sarah","Savannah","Shiann","Sydney","Tammy",
+			"Victoria F.","Victoria P."]
+
+        var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1ddMCPXJQC7wH47mHngIYbIyGMl9Qaoto05DiQ9Shl_g/pubhtml"
+ 
+        var linkElement = document.createElement('a');
+        linkElement.href = "https://raw.githubusercontent.com/Cathy347Le/bach-pool/master/images/demo_plot.png";
+
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "https://raw.githubusercontent.com/Cathy347Le/bach-pool/master/images/demo_plot.png");
+
+        linkElement.appendChild(elem);
+
+        document.getElementById("demographic-perf").appendChild(linkElement);
+
+		function renderSpreadsheetData() {
+            Tabletop.init({
+                key: publicSpreadsheetUrl,
+                callback: draw,
+                simpleSheet: true
+            })
+        }
+
+        renderSpreadsheetData();
+
+    } 
 }
+
+window.addEventListener('load', function() {
+    loadSeasonData("Peter W. (2020)")
+})  
 
 function draw(data, tabletop) {
 
@@ -73,20 +194,6 @@ function draw(data, tabletop) {
 
     ///////////////////////////////////////
     //
-    // load weekly rankings -- for trend chart
-    //
-    ///////////////////////////////////////	
-
-    spaghetti = tabletop.sheets("weekly rankings")
-    spaghetti_data = spaghetti.elements
-
-    //var chartEl = document.querySelector('#chart');
-    //var rect = chartEl.getBoundingClientRect();
-    //document.querySelector('.loading').style.display = 'none';
-    //drawChart(spaghetti_data, rect.width, rect.height);	
-
-    ///////////////////////////////////////
-    //
     // load weekly rankings -- for table
     //
     ///////////////////////////////////////
@@ -94,22 +201,11 @@ function draw(data, tabletop) {
     rankings_over_time = tabletop.sheets("weekly rankings")
     ranking_data = rankings_over_time.elements
 
+    console.log(ranking_data)
+
     rankingTable(ranking_data)
 
 }
-
-renderSpreadsheetData();
-
-///////////////////////////////////////
-//
-// these are the men
-//
-///////////////////////////////////////
-
-
-contestants = ["Brian", "Cam", "Chasen", "Connor J.", "Connor S.", "Daron", "Devin", "Dustin", "Dylan", "Garrett", "Grant",
-    "Hunter", "Jed", "Joe", "Joey J.", "John Paul Jones", "Jonathan", "Kevin", "Luke P.", "Luke S.", "Matt Donald",
-    "Matteo", "Matthew", "Mike", "Peter", "Ryan", "Scott", "Thomas", "Tyler C.", "Tyler G."]
 
 function UserPicks(data) {
 
@@ -227,7 +323,7 @@ function UserPicks(data) {
 
     }
 
-    temp_filter = 'Age Order'
+    temp_filter = names[0]
 
     updateTable(merged_data, temp_filter)
 
@@ -244,12 +340,15 @@ function matchUp(data) {
     });
 
     var names = _.map(list, 'Name');
+    names = names.sort()
 
     var sel1 = names[Math.floor(Math.random() * names.length)];
 
-    names = names.sort(function (x, y) { return x == sel1 ? -1 : y == sel1 ? 1 : 0; });
+    console.log(sel1)
 
-    var first_contender = d3.select('#first_contender')
+    names = names.sort(function (x, y) { return x == sel2 ? -1 : y == sel2 ? 1 : 0; });
+
+    first_contender = d3.select('#first_contender').attr("value", sel1)
 
     first_contender
         .selectAll("option")
@@ -257,6 +356,7 @@ function matchUp(data) {
         .enter()
         .append("option")
         .attr("value", function (d) { return d; })
+        .property("selected", function(d){ return d === sel1; })
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1, d.length);
         })
@@ -313,7 +413,7 @@ function matchUp(data) {
         d3.select("#compare-picks svg").remove()
 
         var margin = { top: 20, right: 20, bottom: 30, left: 50 },
-            width = 500 - margin.left - margin.right,
+            width = 750 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         // set the ranges
@@ -328,7 +428,7 @@ function matchUp(data) {
                 "translate(" + margin.left + "," + margin.top + ")");
 
         cand1_data = data.filter(function (a) {
-            return a.Name == cand1;
+            return a.Name == sel1;
         });
 
         cand1_data = _.map(cand1_data, item => {
@@ -342,7 +442,7 @@ function matchUp(data) {
         cand1 = cand1_data[0].cand_1_name
 
         cand2_data = data.filter(function (a) {
-            return a.Name == cand2;
+            return a.Name == sel2;
         });
 
         cand2_data = _.map(cand2_data, item => {
@@ -352,6 +452,7 @@ function matchUp(data) {
             return newItem;
         });
 
+        cand2 = cand2_data[0].cand_2_name
         cand2_name = cand2_data[0].cand_2_pick
 
         comb = _.map(cand1_data, function (obj) {
@@ -368,8 +469,33 @@ function matchUp(data) {
 
         });
 
+        ///////////////////////////////////////
+        //
+        // Linear regression to determine pick similarity
+        //
+        ///////////////////////////////////////
+
+        linearRegression = ss.linearRegression(comb.map(d => [d.cand_1_pick, d.cand_2_pick]))
+        linearRegressionLine = ss.linearRegressionLine(linearRegression)
+
+        xCoordinates = [0, 30];
+
+        xCoordinates = xCoordinates.map(d => ({
+            x: +d,                         
+            y: linearRegressionLine(+d)
+        }));
+
+        document.getElementById("Similarity").innerHTML = "Picks for <b>" + cand1 + "</b> & <b>" + cand2 + "</b> are " + Math.floor((linearRegression.m) * 100) + "% similar*";
+
         x_scatter.domain(d3.extent(comb, function (d) { return d.cand_1_pick; })).nice();
         y_scatter.domain(d3.extent(comb, function (d) { return d.cand_2_pick; })).nice();
+
+        compare_picks_plot.append("line")
+            .attr("class", "regression")
+            .attr("x1", x_scatter(xCoordinates[0].x))
+            .attr("y1", y_scatter(xCoordinates[0].y))
+            .attr("x2", x_scatter(xCoordinates[1].x))
+            .attr("y2", y_scatter(xCoordinates[1].y));    
 
         compare_picks_plot.selectAll(".dot")
             .data(comb)
@@ -493,8 +619,6 @@ function matchUp(data) {
 
 function rankingTable(tabledata) {
 
-    console.log(tabledata)
-
     rank_data = Object.create(tabledata);
 
     // format the data
@@ -504,6 +628,8 @@ function rankingTable(tabledata) {
         d.week = d.week
         //d.Correct_fmt = +d.Correct_fmt
     });
+
+    console.log(rank_data)
 
     var weeks = [...new Set(rank_data.map(item => item.week))];
 
@@ -515,8 +641,9 @@ function rankingTable(tabledata) {
     previous_week_ranks.forEach(function (d) {
         d.prev_Score = +d.Score
         d.prev_rank = +d.standing
-
     });
+
+	console.log(current_week_ranks)
 
     Object.keys(previous_week_ranks).forEach(o => {
         previous_week_ranks.forEach(p =>
@@ -536,12 +663,22 @@ function rankingTable(tabledata) {
         }));
     });
 
-    current_week_ranks.forEach(function (d) {
-        d.change_score = Math.round((+d.Score - +d.prev_Score) * 100) / 100
-        d.change_standing = +d.prev_rank - +d.standing
+    if(this_week > 1){
+	    current_week_ranks.forEach(function (d) {
+	        d.change_score = Math.round((+d.Score - +d.prev_Score) * 100) / 100
+	        d.change_standing = +d.prev_rank - +d.standing
 
-        d.change_standing = d.change_standing > 0 ? "+" + d.change_standing : d.change_standing;
-    });
+	        d.change_standing = d.change_standing > 0 ? "+" + d.change_standing : d.change_standing;
+	    });
+	}
+	else{
+	    current_week_ranks.forEach(function (d) {
+	        d.change_score = 0
+	        d.change_standing = 0
+
+	        d.change_standing = 0
+	    });		
+	}
 
     d3.select("#ranking-table tbody").remove();
     d3.select("#ranking-table thead").remove();
@@ -572,8 +709,6 @@ function rankingTable(tabledata) {
 
     rows.exit().remove();
 
-    console.log(rank_data)
-
     min = _.minBy(rank_data, function (o) {
         return o.change_score;
     })
@@ -589,8 +724,8 @@ function rankingTable(tabledata) {
     max_change2 = max["change_standing"]
 
     color = d3.scaleLinear()
-        .domain([1, -.5])
-        .range(["#ff4500", "#ffffff"]);
+        .domain([max["Score"], -.5])
+        .range(["#71e554", "#ffffff"]);
 
     score_change = d3.scaleLinear()
         .domain([min_change, max_change])

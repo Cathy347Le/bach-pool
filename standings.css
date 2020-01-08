@@ -7,6 +7,36 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.demos {
+   width: 768px; /* I took the width from your post and placed it in css */
+   height: 576px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.demos img {
+   height: 100%;
+   width: 100%;
+}
+
+.title {
+  font-family: Franklin Gothic Book;
+  font-size: 24px;
+  text-align: center;
+}
+
+.regression {
+  stroke-width: 2px;
+  stroke: black;
+  stroke-dasharray: 10,5;
+}
+
+.Similarity {
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
 #mainNav {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -39,7 +69,7 @@ h3.section-subheading {
   font-weight: 400;
   /* font-style: italic; */
   padding: 0px 130px;
-  margin-bottom: 75px;
+  margin-bottom: 25px;
   text-transform: none;
   text-align: center;
 }
