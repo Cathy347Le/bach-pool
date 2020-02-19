@@ -201,7 +201,10 @@ function draw(data, tabletop) {
     rankings_over_time = tabletop.sheets("weekly rankings")
     ranking_data = rankings_over_time.elements
 
-    console.log(ranking_data)
+    var weeks = [...new Set(ranking_data.map(item => item.week))];
+    var current_week_ranks = ranking_data.filter(function (d) { return d.week == Math.max(...weeks) })
+
+    document.getElementById("last_updated").innerHTML = "Data last updated: " + current_week_ranks[0]['last updated']
 
     rankingTable(ranking_data)
 
